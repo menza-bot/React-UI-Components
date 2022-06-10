@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Content } from './components/Content';
 import { Navbar } from './components/Navbar';
 import { Carousel } from './components/UI-kits/Carousel';
-import { Loader } from './components/UI-kits/Loader';
+import { Slider } from './components/UI-kits/Slider';
 import { NotificationBar } from './components/UI-kits/NotificationBar';
 import { SearchBar } from './components/UI-kits/SearchBar';
 
@@ -28,8 +28,8 @@ const routes = [
     route: 'notificationBar'
   },
   {
-    title: 'Loader',
-    route: 'loader'
+    title: 'Slider',
+    route: 'slider'
   }
 ]
 
@@ -56,8 +56,8 @@ function App() {
           element = { <NotificationBar /> }
         />
         <Route
-          path = 'loader'
-          element = { <Loader /> }
+          path = 'slider'
+          element = { <Slider /> }
         />
       </Routes>
     </Wrapper>

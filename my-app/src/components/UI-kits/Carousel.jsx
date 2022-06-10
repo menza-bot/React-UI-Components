@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import { CgChevronLeft, CgChevronRight } from 'react-icons/cg'
 
-const Wrapper = styled.div`
+const SliderWrapper = styled.div`
   margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
 `
 
 const Window = styled.div`
@@ -17,20 +22,22 @@ const ItemWrapper = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 15px;
+  transform: translate(${props => props.currentToggle + 'px'});
+  transition: .4s
 `
 
 const First = styled.div`
   height: 100%;
   border-radius: 15px;
   min-width: 500px;
-  background-color: red
+  background-color: red;
 `
 
 const Second = styled.div`
   height: 100%;
   border-radius: 15px;
   min-width: 500px;
-  background-color: yellow
+  background-color: yellow;
 `
 
 const Third = styled.div`
@@ -41,15 +48,21 @@ const Third = styled.div`
 `
 
 export const Carousel = () => {
+
+  const [itemWidth] = useState(500)
+  const [currentToggle, setCurrentToggle] = useState(0)
+
   return( 
-    <Wrapper>
-      <Window>
-        <ItemWrapper>
-          <First />
-          <Second />
-          <Third />
-        </ItemWrapper>
-      </Window>
-    </Wrapper>
+      <SliderWrapper>
+        <CgChevronLeft onClick={() => setCurrentToggle(currentToggle === 0 ? currentToggle - 1000 : currentToggle + 500)} />
+        <Window itemWidth = {itemWidth}>
+          <ItemWrapper currentToggle = {currentToggle}>
+            <First itemWidth = {itemWidth} />
+            <Second itemWidth = {itemWidth} />
+            <Third itemWidth = {itemWidth} />
+          </ItemWrapper>
+        </Window>
+        <CgChevronRight onClick={() => setCurrentToggle(currentToggle === -1000 ? currentToggle + 1000 : currentToggle - 500)} />
+      </SliderWrapper>
   )
 }
