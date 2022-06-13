@@ -17,6 +17,8 @@ const NavTitle = styled.div`
 
 const NavRoutes = styled.div`
   margin: 10px 15px;
+  text-decoratoin: none;
+  color: black;
 `
 
 const NavItem = styled.div`
@@ -34,8 +36,8 @@ export const Navbar = ({ routes }) => {
       </NavTitle>
       <NavRoutes>
         {
-          routes.map((item) => {
-            return <Link to={item.route}>
+          routes.map((item, index) => {
+            return <Link to={item.route} key={index}>
               <NavItem>{item.title}</NavItem>
             </Link>
           })

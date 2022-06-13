@@ -4,7 +4,7 @@ import { Content } from './components/Content';
 import { Navbar } from './components/Navbar';
 import { Carousel } from './components/UI-kits/Carousel';
 import { Slider } from './components/UI-kits/Slider';
-import { NotificationBar } from './components/UI-kits/NotificationBar';
+import { NotificationsRoot } from './components/UI-kits/NotificationsRoot';
 import { SearchBar } from './components/UI-kits/SearchBar';
 
 
@@ -24,8 +24,8 @@ const routes = [
     route: 'searchBar'
   },
   {
-    title: 'Notification bar', 
-    route: 'notificationBar'
+    title: 'Notifications', 
+    route: 'notifications'
   },
   {
     title: 'Slider',
@@ -52,8 +52,8 @@ function App() {
           element = { <SearchBar /> }
         />
         <Route
-          path = 'notificationbar'
-          element = { <NotificationBar /> }
+          path = 'notifications'
+          element = { <NotificationsRoot /> }
         />
         <Route
           path = 'slider'
