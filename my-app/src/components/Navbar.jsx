@@ -9,7 +9,7 @@ const NavContent = styled.div`
 `
 
 const NavTitle = styled.div`
-  font-weigth: bolder;
+  font-weight: bolder;
   font-size: 1.5rem;
   margin: 10px 15px;
   display: flex;
@@ -17,7 +17,7 @@ const NavTitle = styled.div`
 
 const NavRoutes = styled.div`
   margin: 10px 15px;
-  text-decoratoin: none;
+  text-decoration: none;
   color: black;
 `
 
